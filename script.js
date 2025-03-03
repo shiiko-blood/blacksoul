@@ -48,6 +48,17 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("boton-inicio")?.addEventListener("click", function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('change', function() {
+        if (menuToggle.checked) {
+            menu.style.display = 'flex';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
 });
 
 // Función para configurar el modal en todas las páginas
