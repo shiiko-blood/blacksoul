@@ -1,0 +1,850 @@
+@font-face {
+    font-family: 'Exocet2';
+    src: url('fonts/Exocet2.ttf') format('woff2'),
+         url('fonts/Exocet2.ttf') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Exocet2', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* viewport height */
+    background-color: rgb(0, 0, 0);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: url(imagenes/vaner.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.menu {
+    background: #2c3e5000;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 1000;
+    width: auto;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.menu-items li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    display: block;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.menu-items a:hover {
+    background-color: #34495e;
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+.submenu {
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #34495e;
+    min-width: 200px;
+    list-style: none;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.submenu:hover .submenu-items {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu-items li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.submenu-items li:last-child {
+    border-bottom: none;
+}
+
+.submenu-items a {
+    padding: 12px 20px;
+    width: 100%;
+    display: block;
+}
+
+.menu-items a.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.logo {
+    background-image: url('imagenes/logoRecurso\ 1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    padding: 50px 55px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    height: 45px;
+    z-index: 1001;
+   
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #fffdfc;
+    display: block;
+    font-weight: 600;
+}
+
+#menu {
+    display: none;
+
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+.header-txt {
+    text-align: center;
+}
+
+.header-txt h1 {
+    font-size: 85px;
+    color: #fffdfc;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.header-txt p {
+    color: #BEBEBE;
+    font-size: 16px;
+    padding: 0 250px;
+    margin-bottom: 45px;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 12px 45px;
+    border: 1px solid #fffdfc;
+    color: #ff0000;   
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-2:hover {
+    color: #1b293a;
+    background-color: #000000;
+}
+
+.general {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.bloque-1 {
+    background-image: url('imagenes/separadorRecurso 1.png');
+    background-position: center bottom;
+    background-size: cover;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    height: 100px; /* Ajusta la altura según lo necesario */
+    min-height: 80vh; /* Controla la altura mínima */
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro */
+    align-items: center;
+}
+
+
+.bloque-1 {
+    width: 200;
+    height: 100;
+}
+
+.general-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+}
+
+.general-1 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    padding: 0px 55px;
+}
+
+.general-2 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    padding: 0px 55px;
+}
+
+.general-3 {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    padding: 0px 55px;
+}
+
+h2{
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ff0000;
+}
+
+.txt h3 {
+    font-size: 18px;
+    color: #ffff00;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.txt p {
+    color: #ebebeb;
+    font-size: 16px;
+}
+.info-1 {
+    padding:370px 5px;
+    align-content: center;
+    background-image: url('imagenes/inter.png');
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: 1300px 
+}
+
+.info-content {
+    text-align: center;
+}    
+/* Estilos para el contenedor del tooltip */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    width: 280px;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Mostrar tooltip al hover */
+.circle-1:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilos para el título de la runa */
+.tooltip strong {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #ffd700; /* Dorado para el título */
+}
+
+/* Estilos para el nivel */
+.tooltip br + br {
+    display: none;
+}
+
+/* Estilos para las categorías (Armas, Armaduras, etc.) */
+.tooltip p:nth-child(odd) {
+    color: #ff9900; /* Naranja para las categorías */
+    margin: 8px 0 2px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Estilos para los efectos */
+.tooltip p:nth-child(even) {
+    color: #ffffff;
+    margin: 2px 0 8px 0;
+    padding-left: 10px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+/* Ajuste para evitar que el tooltip se salga de la pantalla */
+@media (max-width: 600px) {
+    .tooltip {
+        max-width: 90vw;
+        white-space: normal;
+    }
+}
+
+.circle-1 {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .tooltip {
+        width: 250px;
+        font-size: 14px;
+    }
+}
+
+
+.tooltip::before {
+    content: 'none';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
+    max-width: 0px; /* Aumenta el ancho máximo */
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+    word-wrap: break-word; /* Asegura que las palabras largas se dividan */
+    overflow: visible; /* Evita que el contenido se recorte */
+    
+    
+}
+
+/* Ajuste para evitar que el tooltip se salga de la pantalla */
+.circle-1:hover .tooltip {
+    left: auto;
+    right: auto;
+    transform: none;
+}
+
+.circle-1:hover .tooltip::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
+}
+
+.footer {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.form {
+    margin-top: 35px;
+}
+
+.campo {
+    margin-right: 10px;
+    padding: 17px 35px;
+    border: 2px solid #b4b4b4;
+    outline: none;
+    color: #1b293a
+}
+
+.campo::placeholder {
+    color: #b4b4b4;
+}
+
+.footer-txt {
+    margin-top: 100px;
+    border-top: 1px solid #b4b4b47e;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-txt p {
+    color: #1b293a;
+    font-size: 16px;
+}
+
+@media(max-width: 991px) {
+    .menu {
+        padding: 30px;
+    }
+    .menu label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1b293a;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header {
+        min-height: 0vh;
+    }
+    
+    .header-content {
+        padding: 100px 30px;
+    }
+
+    .header-txt h1 {
+        font-size: 50px;
+    }
+
+    .header-txt p {
+        padding: 0;
+    }
+
+    .general {
+        padding: 30px 30px 0 30px;
+    }
+
+    .general-content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .general-1,
+    .general-2,
+    .general-3 {
+        height: 350px;
+        padding: 100px;
+        margin-top: 10px;
+    }
+
+    .info-1 {
+        padding: 200px 30px;
+        background-size: cover;
+        margin-top: -110px;
+    }
+
+    .info-circle {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .circle-txt {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .g2 {
+        margin-top: -120px;
+    }
+    
+    .info-2 {
+        padding: 280px 30px;
+        background-size: cover;
+        margin-top: -180px;
+    }
+
+    .testi {
+        flex-direction: column;
+    }
+    
+    .testi-left {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .testi-right {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 50px;
+    }
+
+    .campo {
+        margin: 0 0 10px 0;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    .menu {
+        margin-right: 0;
+        width: auto;
+        min-width: 200px;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+        cursor: pointer;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        background: #2c3e50;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+    }
+
+    .menu-items.active {
+        display: flex;
+    }
+
+    .submenu-items {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        background: #2c3e50;
+    }
+
+    .submenu-items a {
+        padding-left: 30px;
+    }
+
+    .submenu.active .submenu-items {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+/* Contenedor para cada fila de runas */
+.runes-row {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+
+
+.runes-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1600px; /* Ajustado para 5 filas */
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    /* Ajustes para los círculos de runas */
+    .circle-txt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+    
+    .circle-1 {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    
+    .circle-1 img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        display: block;
+    }
+    
+    /* Número de runa debajo de la imagen */
+    .circle-txt p {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* Estilos para el contenedor del tooltip */
+    .tooltip {
+        visibility: hidden;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        width: 280px;
+        z-index: 1000;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: left;
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    .tooltip-1 {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .circle-1:hover .tooltip-1 {
+        visibility: visible;
+        opacity: 1;
+    }
+
+   
+    
+    @media (max-width: 600px) {
+        .tooltip {
+            max-width: 90vw;
+            white-space: normal;
+        }
+    }
+    
+    /* Ajustes responsive */
+    @media (max-width: 1400px) {
+        .runes-row {
+            grid-template-columns: repeat(11, 3fr);
+            gap: 15px;
+        }
+        
+        .circle-1 {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    
+    @media (max-width: 1200px) {
+        .runes-row {
+            grid-template-columns: repeat(11, 3fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .runes-row {
+            grid-template-columns: repeat(11, 3fr);
+        }
+        
+        .runes-container {
+            gap: 10px;
+            padding: 10px;
+            grid-template-columns: repeat(11, minmax(80px, 3fr));
+            gap: 20px;
+             justify-content: center;
+            align-items: center;
+             margin: 0 auto;
+             width: 100%;
+        }
+    }    
+    
+}
+
+
+
+/* Ajustes responsive */
+@media (max-width: 1400px) {
+    .runes-row {
+        grid-template-columns: repeat(11, minmax(70px, 1fr));
+        gap: 15px;
+    }
+    
+    .circle-1 {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .runes-row {
+        grid-template-columns: repeat(6, minmax(70px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .runes-row {
+        grid-template-columns: repeat(3, minmax(70px, 1fr));
+    }
+    
+    .runes-container {
+        gap: 30px;
+        padding: 20px 10px;
+    }
+}
+
+/* Reset para evitar márgenes y padding no deseados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.container {
+    max-width: 100vw; /* Asegura que el contenido no se desborde */
+    display: flex;
+    flex-direction: column; /* Asegura que los textos estén encima de las categorías */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pers-conten {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    text-align: center;
+}
+
+.bloque-person {
+    background-image: url(imagenes/personajeRecurso\ 1.png);
+    background-position: center center; /* Centra completamente la imagen */
+    background-repeat: no-repeat;
+    background-size: 930px; /* Ajusta la imagen para que no se recorte */
+    height: 100vh; /* Reduce la altura para que no sea tan grande */
+    width: 120vw; /* Ajusta el ancho para que no ocupe toda la pantalla */
+    display: flex;
+    flex-direction: column; /* Coloca el texto encima de la imagen */
+    justify-content: flex-end; /* Alinea la imagen en la parte inferior */
+    align-items: center;
+    position: relative;
+    z-index: 1; /* Asegura que la imagen esté encima del footer */
+}
+
+.bloque-person h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Estilos para el footer */
+footer {
+    flex-shrink: 0; /* Evita que el footer se encoja */
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Empuja el footer al final */
+    position: relative;
+    z-index: 0; /* Asegura que el footer no tape la imagen */
+}
+
+
+/* Contenido del footer */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
