@@ -1,0 +1,421 @@
+@font-face {
+    font-family: 'Exocet2';
+    src: url('fonts/Exocet2.ttf') format('woff2'),
+         url('fonts/Exocet2.ttf') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {  
+    font-family: 'Exocet2', sans-serif;
+}
+
+body {
+    background-color: black;
+}    
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: url(imagenes/vaner.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    background: #2c3e5000;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 1000;
+    width: auto;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.menu-items li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    display: block;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.menu-items a:hover {
+    background-color: #34495e;
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+.submenu {
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #34495e;
+    min-width: 200px;
+    list-style: none;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.submenu:hover .submenu-items {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu-items li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.submenu-items li:last-child {
+    border-bottom: none;
+}
+
+.submenu-items a {
+    padding: 12px 20px;
+    width: 100%;
+    display: block;
+}
+
+.menu-items a.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.logo {
+    background-image: url(imagenes/logoRecurso\ 1.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    padding: 50px 55px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    height: 45px;
+    z-index: 1001;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #fffdfc;
+    display: block;
+    font-weight: 600;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+/* TITULOS */
+h2 {
+    text-shadow: 0 0 30px rgb(255, 255, 255);
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #ff0000;
+    text-align: center; /* Centra el texto */
+    display: block; /* Asegura que se aplique correctamente */
+    width: 100%; /* Se extiende en todo el ancho */
+}
+
+/*buscador*/
+.buscador-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea el buscador a la derecha */
+    margin-bottom: 20px;
+}
+
+#buscador {
+    width: 200px; /* Reduce el tamaño del input */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* GRID CONTAINERS */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-auto-flow: dense; /* Reorganiza los elementos para evitar espacios vacíos */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* CUADROS INDIVIDUALES */
+.runeword-box {
+    background-color: #222;
+    color: #eaff00;
+    border: 2px solid #009dff5a;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(255, 255, 255);
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 150px; /* Evita cuadros demasiado pequeños */
+    height: auto; /* Ajusta la altura según el contenido */
+}
+
+/* IMÁGENES DE RUNAS */
+.rune-img {
+    vertical-align: middle;
+    height: 1em;
+    width: auto;
+    margin-right: 5px;
+}
+
+/* ESTILO PARA NOMBRES DE RUNAS */
+.resaltado-rune {
+    font-size: 1em;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5dd8f;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #bbb;
+}
+
+.runes {
+    font-size: 18px;
+    color: #fffb00;
+    margin: 10px 0;
+    text-shadow: 0px 0px 8px rgb(255, 255, 255);
+}
+
+.requirements {
+    font-style: italic;
+    color: #ffffff;
+}
+
+.effects {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.effects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.effects li {
+    color: #00ffff;
+    margin-bottom: 5px;
+}
+
+/* IMAGEN DE ESCUDO */
+.escudo-img {
+    width: 160px;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: auto; /* Empuja la imagen hacia la parte inferior sin superponer el texto */
+}
+
+.escudo-img:hover {
+    transform: scale(1.5);
+    z-index: 1000;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor interno */
+.modal-contenedor {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 60%;
+    max-height: 60%;
+    padding: 20px;
+}
+
+/* Imagen dentro del modal */
+.modal-contenido {
+    margin: 0;
+    display: block;
+    max-width: 90%; /* Ajustar el tamaño máximo de la imagen */
+    max-height: 80vh; /* Cambia el valor a lo que se necesite para mayor tamaño */
+    width: auto; /* Ajusta automáticamente el ancho de la imagen */
+    height: auto; /* Ajusta automáticamente la altura de la imagen */
+    border-radius: 10px;
+    box-shadow: 0 0 20px white;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.section-contenedora h2 {
+    color: rgb(0, 221, 255);
+    font-size: 30px;
+    background-color: rgba(128, 128, 128, 0.349);
+}
+
+/* Botón de cerrar */
+.cerrar {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor interno */
+.modal-contenedor {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 60%;
+    max-height: 60%;
+    padding: 20px;
+}
+
+/* Imagen dentro del modal */
+.modal-content {
+    margin: 0;
+    display: block;
+    max-width: 90%; /* Ajustar el tamaño máximo de la imagen */
+    max-height: 80vh; /* Cambia el valor a lo que se necesite para mayor tamaño */
+    width: auto; /* Ajusta automáticamente el ancho de la imagen */
+    height: auto; /* Ajusta automáticamente la altura de la imagen */
+    border-radius: 10px;
+    box-shadow: 0 0 20px white;
+    cursor: pointer;
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* RESALTADO */
+.resaltado {
+    text-shadow: 0px 0px 11px rgb(98, 250, 250);
+    color: #fff;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+    }
+}
