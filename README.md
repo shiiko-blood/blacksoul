@@ -1,2 +1,0 @@
-# blacksoul
-no oficial
