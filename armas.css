@@ -12,13 +12,14 @@
     list-style: none;
 }
 
-body {  
-    font-family: 'Exocet2', sans-serif;
-}
-
+/* Estilos generales */
 body {
-    background-color: black;
-}    
+    font-family: 'Exocet2', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
 
 .container {
     max-width: 1200px;
@@ -38,7 +39,7 @@ body {
 .menu {
     background: #2c3e5000;
     padding: 0.5rem 1rem;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 20px;
     z-index: 1000;
@@ -77,31 +78,65 @@ body {
     transform: translateY(-2px);
 }
 
+#menu-toggle {
+    display: none;
+}
+
+/* Oculta el menú por defecto */
+.menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px; /* Menú principal a la derecha */
+    background: #22222200;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Muestra el menú cuando el checkbox está activado */
+#menu-toggle:checked ~ .menu {
+    display: block;
+}
+
+/* Oculta el icono del menú cuando el checkbox está activado */
+#menu-toggle:checked + .menu-icon {
+    display: none;
+}
+
+.menu-icono {
+    position: absolute;
+    width: 60px; 
+    height: auto; 
+    display: block;
+    cursor: pointer; 
+    max-width: 100px; 
+    max-height: 100px;
+    top: 10px;  /* Ajusta la distancia desde arriba */
+    right: 20px; /* Ajusta la distancia desde la derecha */
+}
+
+#menu-toggle {
+    display: none;
+}
+
 .submenu {
     position: relative;
-    cursor: pointer;
 }
 
 .submenu-items {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
-    background: #34495e;
-    min-width: 200px;
-    list-style: none;
-    padding: 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    border-radius: 4px;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    top: 0;
+    right: 100%; /* El submenú se abrirá a la izquierda */
+    background: #333;
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .submenu:hover .submenu-items {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .submenu-items li {
@@ -125,13 +160,13 @@ body {
 }
 
 .logo {
-    background-image: url(imagenes/logoRecurso\ 1.png);
+    background-image: url('imagenes/logoRecurso\ 1.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
     padding: 50px 55px;
-    position: fixed;
+    position: absolute;
     top: 5px;
     left: 5px;
     height: 45px;
@@ -151,18 +186,6 @@ body {
     font-weight: 600;
 }
 
-#menu {
-    display: none;
-}
-
-.menu-icono {
-    width: 25px;
-}
-
-.menu label {
-    cursor: pointer;
-    display: none;
-}
 
 /* TITULOS */
 h2 {

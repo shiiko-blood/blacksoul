@@ -12,13 +12,14 @@
     list-style: none;
 }
 
-body {  
-    font-family: 'Exocet2', sans-serif;
-}
-
+/* Estilos generales */
 body {
-    background-color: black;
-}    
+    font-family: 'Exocet2', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
 
 .container {
     max-width: 1200px;
@@ -33,26 +34,20 @@ body {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    
 }
 
 .menu {
-    background: #2c3e50;
+    background: #2c3e5000;
     padding: 0.5rem 1rem;
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    right: 20px;
     z-index: 1000;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centrar el menú horizontalmente */
-    align-items: center;
+    width: auto;
 }
 
 .menu-items {
     list-style: none;
-    background-color: #666666;
     display: flex;
     margin: 0;
     padding: 0;
@@ -78,41 +73,75 @@ body {
 }
 
 .menu-items a:hover {
-    background-color: #34495ec8;
+    background-color: #34495e;
     color: #3498db;
     transform: translateY(-2px);
 }
 
+#menu-toggle {
+    display: none;
+}
+
+/* Oculta el menú por defecto */
+.menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px; /* Menú principal a la derecha */
+    background: #22222200;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Muestra el menú cuando el checkbox está activado */
+#menu-toggle:checked ~ .menu {
+    display: block;
+}
+
+/* Oculta el icono del menú cuando el checkbox está activado */
+#menu-toggle:checked + .menu-icon {
+    display: none;
+}
+
+.menu-icono {
+    position: absolute;
+    width: 60px; 
+    height: auto; 
+    display: block;
+    cursor: pointer; 
+    max-width: 100px; 
+    max-height: 100px;
+    top: 10px;  /* Ajusta la distancia desde arriba */
+    right: 20px; /* Ajusta la distancia desde la derecha */
+}
+
+#menu-toggle {
+    display: none;
+}
+
 .submenu {
     position: relative;
-    cursor: pointer;
 }
 
 .submenu-items {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
-    background: #34495e00;
-    min-width: 200px;
-    list-style: none;
-    padding: 0;
-    
-    border-radius: 4px;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    top: 0;
+    right: 100%; /* El submenú se abrirá a la izquierda */
+    background: #333;
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .submenu:hover .submenu-items {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .submenu-items li {
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.911);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .submenu-items li:last-child {
@@ -131,80 +160,42 @@ body {
 }
 
 .logo {
-    background-image: url(imagenes/logoRecurso\ 1.png);
+    background-image: url('imagenes/logoRecurso\ 1.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 150px;
+    height: 50px;
     padding: 50px 55px;
-    position: fixed;
+    position: absolute;
     top: 5px;
     left: 5px;
     height: 45px;
     z-index: 1001;
-   
 }
 
-.menu .navbar ul li {
-    position: relative;
-    float: left;
-}
 
-.menu .navbar ul li a {
-    font-size: 18px;
-    padding: 20px;
-    color: #fffdfc;
-    display: block;
-    font-weight: 600;
-}
-
-#menu {
-    display: none;
-
-}
-
-.menu-icono {
-    width: 25px;
-}
-
-.menu label {
-    cursor: pointer;
-    display: none;
-}
-
-/* TITULOS */
 h2 {
-    text-shadow: 0 0 30px rgb(255, 255, 255);
-    font-size: 60px;
+    font-size: 70px;
     text-transform: uppercase;
-    color: #ff0000;
-    text-align: center; /* Centra el texto */
-    display: block; /* Asegura que se aplique correctamente */
-    width: 100%; /* Se extiende en todo el ancho */
+    color: #c300ff;
+    text-align: center;
+    text-shadow: #ffffff 0px 0px 11px;
 }
 
-/*buscador*/
-.search-container {
-    position: relative;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 600px;
+h3 {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #c300ff;
+    text-align: center;
+    text-shadow: #ffffff 0px 0px 11px;
 }
 
-#buscador {
-    width: 100%;
-    padding: 12px 20px;
-    padding-right: 40px; /* Espacio para el ícono */
-    font-size: 16px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    outline: none;
-}
-
-#buscador::placeholder {
-    color: #888;
+h4 {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #c300ff;
+    text-align: center;
+    text-shadow: #ffffff 0px 0px 11px;
 }
 
 .search-label {
@@ -214,16 +205,6 @@ h2 {
     transform: translateY(-50%);
     color: #888;
     cursor: pointer;
-}
-
-/* Cuando el input está enfocado */
-#buscador:focus {
-    border-color: #666;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-}
-
-#buscador:focus + .search-label {
-    color: #fff;
 }
 
 /* Estilos para ocultar elementos durante la búsqueda */
@@ -404,40 +385,7 @@ h2 {
     }
 }
 
-body { 
-    margin: 0;
-    padding: 0;
-}
 
-.header {
-    background-color: #333;
-    padding: 15px;
-    color: white;
-    text-align: center;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    background-color: #44444400;
-    padding: 10px;
-}
-
-.menu-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.menu-items li {
-    margin: 0 15px;
-}
-
-.menu-items a {
-    color: white;
-    text-decoration: none;
-}
 
 /*buscador*/
 .buscador-container {
@@ -454,46 +402,7 @@ body {
     border-radius: 5px;
 }
 
-.section-container {
-    margin: 0;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: transparent;
-}
 
-.collapsible {
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    margin-top: 0;
-}
-
-.arrow {
-    transition: transform 0.3s ease;
-}
-
-.arrow.active {
-    transform: rotate(180deg);
-}
-
-.content {
-    display: none;
-    padding: 10px;
-    background-color: transparent;
-}
-
-.content.active {
-    display: block;
-}
 
 /* Ajuste del grid para 3 columnas fijas */
 .runewords-grid {
@@ -515,18 +424,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Media queries para mantener responsividad */
-@media (max-width: 1200px) {
-    .runewords-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 768px) {
-    .runewords-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Quitar fondo del menú principal */
 nav {

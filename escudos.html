@@ -23,31 +23,30 @@
 
 </head>
 
-<body>
-    
-    <header class="header">
-        <a href="#" class="logo"></a>
-        <div class="menu container">
-            <input type="checkbox" id="menu">
-            <nav class="menu">
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="menu-items">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="submenu">
-                        <a href="#">Runewords ▼</a>
-                        <ul class="submenu-items">
-                            <li><a href="escudos.html">Escudos</a></li>
-                            <li><a href="equipo.html">Armaduras</a></li>
-                            <li><a href="armas.html">Armas</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="cubo.html">Cubo</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="header">
+    <a href="#" class="logo"></a>
+    <div class="menu-container">
+        <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <img src="imagenes/menu 2.png" class="menu-icono" alt="Menú">
+            </label>
+        <nav class="menu">
+            <ul class="menu-items">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Runewords</a>
+                    <ul class="submenu-items">
+                        <li><a href="escudos.html">Escudos</a></li>
+                        <li><a href="equipo.html">Armaduras</a></li>
+                        <li><a href="armas.html">Armas</a></li>
+                    </ul>
+                </li>
+                <li><a href="galeria.html">Cubo Horadric</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
     <!-- CONTENEDOR DE LOS CUADROS -->
     <section class="general container">
@@ -550,6 +549,27 @@
         function irAlInicio() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.querySelector('.menu');
+            const menuIcon = document.querySelector('.menu-icon');
+    
+            // Cierra el menú cuando se hace clic en un enlace
+            document.querySelectorAll('.menu-items a').forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.checked = false;
+                });
+            });
+    
+            // Cierra el menú al hacer clic fuera de él
+            document.addEventListener('click', (event) => {
+                if (!menu.contains(event.target) && !menuIcon.contains(event.target) && event.target !== menuToggle) {
+                    menuToggle.checked = false;
+                }
+            });
+        });
     </script>
 </body>
 </html>

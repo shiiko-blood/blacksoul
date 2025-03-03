@@ -69,26 +69,23 @@ img {
     
     <header class="header">
         <a href="#" class="logo"></a>
-        <div class="menu container">
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="imagenes/menu 2.png" class="menu-icono" alt="">
-            </label>
+        <div class="menu-container">
+            <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">
+                    <img src="imagenes/menu 2.png" class="menu-icono" alt="Menú">
+                </label>
             <nav class="menu">
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul class="menu-items">
                     <li><a href="index.html">Inicio</a></li>
                     <li class="submenu">
-                        <a href="#">Runewords ▼</a>
+                        <a href="#">Runewords</a>
                         <ul class="submenu-items">
                             <li><a href="escudos.html">Escudos</a></li>
                             <li><a href="equipo.html">Armaduras</a></li>
                             <li><a href="armas.html">Armas</a></li>
                         </ul>
                     </li>
-                    <li><a href="Cubo.html">Cubo</a></li>
+                    <li><a href="cubo_horadric.html">Cubo Horadric</a></li>
                 </ul>
             </nav>
         </div>
@@ -723,7 +720,7 @@ img {
     <!-- Sección de Cascos -->
     <section class="section-container">
     <section id="cascos">
-        <h2>Cascos</h2>
+        <h3>Cascos</h3>
         
     </section>
     <div class="runewords-grid">
@@ -1052,7 +1049,7 @@ img {
     <!-- Sección de Guantes, Botas y Cinturones -->
     <section class="section-container">
         <section id="botas">
-            <h2>botas, guantes y Cinturones</h2>
+            <h4>botas, guantes y Cinturones</h4>
         </section>
             <div class="runewords-grid">
                 <div class="runeword-box">
@@ -1269,6 +1266,27 @@ img {
     function irAlInicio() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+        const menuIcon = document.querySelector('.menu-icon');
+
+        // Cierra el menú cuando se hace clic en un enlace
+        document.querySelectorAll('.menu-items a').forEach(item => {
+            item.addEventListener('click', () => {
+                menuToggle.checked = false;
+            });
+        });
+
+        // Cierra el menú al hacer clic fuera de él
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target) && event.target !== menuToggle) {
+                menuToggle.checked = false;
+            }
+        });
+    });
 </script>
 </body>
 </html>

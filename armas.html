@@ -56,70 +56,7 @@
     }
     </style>
 </head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>equipo</title> 
-    <link rel="stylesheet" href="equipo.css">
-    
-    <script>
-        function toggleSection(element) {
-            let content = element.nextElementSibling;
-            let arrow = element.querySelector(".arrow");
-            content.classList.toggle("active");
-            arrow.classList.toggle("active");
-        }
-    </script>
 
-<style>
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-        padding: 0px;
-        
-    }
-    .contenedor {
-        flex-grow: 1; /* Permite que el contenido crezca y empuje el botón abajo */
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* Espacio entre los box */
-    }
-
-    .boton-container {
-        text-align: center;
-        padding: 20px 0;
-    }
-    button {
-        font-size: 20px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-
-.contenedor {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.boton-container {
-    display: flex; /* Flexbox para alinear */
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente (si es necesario) */
-    padding: 20px 0;
-}
-
-img {
-    cursor: pointer;
-    width: 200px; /* Tamaño de la imagen */
-    height: auto;
-}
-</style>
 
 </head>
 
@@ -127,26 +64,23 @@ img {
     
     <header class="header">
         <a href="#" class="logo"></a>
-        <div class="menu container">
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="imagenes/menu 2.png" class="menu-icono" alt="">
-            </label>
+        <div class="menu-container">
+            <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">
+                    <img src="imagenes/menu 2.png" class="menu-icono" alt="Menú">
+                </label>
             <nav class="menu">
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul class="menu-items">
                     <li><a href="index.html">Inicio</a></li>
                     <li class="submenu">
-                        <a href="#">Runewords ▼</a>
+                        <a href="#">Runewords</a>
                         <ul class="submenu-items">
                             <li><a href="escudos.html">Escudos</a></li>
                             <li><a href="equipo.html">Armaduras</a></li>
                             <li><a href="armas.html">Armas</a></li>
                         </ul>
                     </li>
-                    <li><a href="Cubo.html">Cubo</a></li>
+                    <li><a href="cubo_horadric.html">Cubo Horadric</a></li>
                 </ul>
             </nav>
         </div>
@@ -2319,6 +2253,27 @@ img {
     function irAlInicio() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+        const menuIcon = document.querySelector('.menu-icon');
+
+        // Cierra el menú cuando se hace clic en un enlace
+        document.querySelectorAll('.menu-items a').forEach(item => {
+            item.addEventListener('click', () => {
+                menuToggle.checked = false;
+            });
+        });
+
+        // Cierra el menú al hacer clic fuera de él
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target) && event.target !== menuToggle) {
+                menuToggle.checked = false;
+            }
+        });
+    });
 </script>
 </body>
 </html>
